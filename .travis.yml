@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - node
+
+env:
+  - CI = false
+  global:
+    - NODE_VERSION=stable
+
+install:
+  - npm install
+
+script:
+  - npm run test
+
+after_script:
+  - echo "BUILD FINISHED"
