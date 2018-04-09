@@ -1,23 +1,44 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  View,
+  ImageBackground,
+  Text,
+  StyleSheet,
+  Content
+} from 'react-native';
+import backgroundImg from './img/background.jpg'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
+export default class App extends Component {
+ render() {
+   return (
+     <ImageBackground
+       style={styles.backgroundImg}
+       source={backgroundImg}
+       id="backgroundImg"
+     >
+       <View style={styles.fluidContainer}>
+         <Text style={styles.introText}>This is a Cat-></Text>
+       </View>
+     </ImageBackground>
+   );
+ }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  introText: {
+    fontSize: 48,
+    paddingLeft: 40,
   },
+  fluidContainer: {
+    width: "80%",
+    height: "80%",
+  },
+  backgroundImg:{
+    flex : 1,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    width: null,
+    height: "100%"
+  }
 });
