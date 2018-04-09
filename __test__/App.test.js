@@ -29,9 +29,8 @@ describe('Testing all the meowStyles, meow', () => {
   it('should render an android View', () => {
     expect(tObj.appObj.type == "View");
   });
-  it('should have at least two images', () => {
-    console.log(tObj.getImage());
-    expect(tObj.getImage().length >= 2).to.eql(true);
+  it('should have at least one image, meow', () => {
+    expect(tObj.getImage().length >= 1).to.eql(true);
   });
   it('background image should have height 100%', () => {
     const bkImg = tObj
@@ -52,10 +51,4 @@ describe('Testing all the meowStyles, meow', () => {
     const nestTest = tObj.appObj.children[1].children[0].children[0];
     expect(nestTest === "This is a Cat->").to.eql(true);
   });
-  // it('Header text size should be 48', () => {
-  //   expect(texts[0].props.style.fontSize === 48).to.eql(true);
-  // });
-  // it('Header text size should be 48', () => {
-  //   console.log(texts)
-  // });
 })

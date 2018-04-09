@@ -82,6 +82,7 @@ describe('Test the builder', () => {
     });
   }
 
+  // styletests
   it('styleTester should returns a 0, not present', () => {
       const styleTestInc = tObj.styleTester(
         metaStyle,
