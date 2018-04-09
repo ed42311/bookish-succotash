@@ -4,8 +4,6 @@ node_js:
 
 env:
   - CI = false
-  global:
-    - NODE_VERSION=stable
 
 install:
   - npm install
