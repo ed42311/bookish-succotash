@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Text,
   StyleSheet,
+  Button,
   TouchableOpacity
 } from 'react-native';
 

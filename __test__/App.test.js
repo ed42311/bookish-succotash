@@ -64,5 +64,4 @@ describe('Testing all the meowStyles, meow', () => {
       expect(tObj.wrapper.state().mainText).to.eql("This is a Cat ->");
     });
   })
-
 })

@@ -1,9 +1,8 @@
 import React from 'react';
 import sinon from 'sinon';
 import chai, { expect } from 'chai';
-import ReactNative, { Text } from 'react-native';
+import ReactNative, { Text, Button, TouchableOpacity } from 'react-native';
 import enzyme, { mount, configure, shallow } from 'enzyme';
-import jsdomGlobal from 'jsdom-global';
 import Adapter from 'enzyme-adapter-react-16'
 import renderer from 'react-test-renderer';
 import tb from '../helpers/testBuilder.js'
@@ -19,6 +18,10 @@ const tObj = new tb(<TransformButton />);
 describe('Transform Button meta meow!', () => {
   it('TransButton should have 1 meow Text objects', () => {
     expect(tObj.wrapper.find(Text).length).to.eql(1);
+  });
+
+  it('TransButton meow has a TouchableOpacity rendered', () => {
+    expect(tObj.wrapper.find(TouchableOpacity).length == true).to.eql(true);
   });
 
   it('TransformButton transformAction press should call transformAction', () => {
