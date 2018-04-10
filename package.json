@@ -6,6 +6,8 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-expo": "^26.0.0",
+    "jsdom": "11.7.0",
+    "jsdom-global": "3.0.2",
     "react-native-scripts": "1.13.1",
     "react-test-renderer": "^16.3.0-alpha.1"
   },
@@ -16,7 +18,7 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest --watchAll --coverage --verbose",
-    "test:deploy":"jest"
+    "test:deploy": "jest"
   },
   "jest": {
     "preset": "react-native"

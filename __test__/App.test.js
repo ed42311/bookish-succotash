@@ -1,13 +1,14 @@
 import React from 'react';
 import sinon from 'sinon';
 import chai, { expect } from 'chai';
-import ReactNative, { Text } from 'react-native';
+import ReactNative, { Text, TouchableOpacity } from 'react-native';
 import enzyme, { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16'
 import renderer from 'react-test-renderer';
 import tb from '../helpers/testBuilder.js'
 
 import App from '../App';
+import TransformButton from '../comp/TransformButton';
 
 const assert = chai.assert;
 configure({ adapter: new Adapter() });
@@ -22,6 +23,9 @@ describe('Testing all the metaMeow, meow', () => {
   });
   it('App should have 1 meow Text objects', () => {
     expect(tObj.wrapper.find(Text).length).to.eql(1);
+  });
+  it('App should meow have one TransformButton', () => {
+    expect(tObj.wrapper.find(TransformButton).length).to.eql(1);
   });
 })
 
@@ -46,9 +50,19 @@ describe('Testing all the meowStyles, meow', () => {
        ) == true;
     expect(benHeight).to.eql(true);
   });
-
   it('Header should be present with correct text', () => {
-    const nestTest = tObj.appObj.children[1].children[0].children[0];
-    expect(nestTest === "This is a Cat->").to.eql(true);
+    expect(tObj.wrapper.state().mainText).to.eql("This is a Cat ->");
   });
+  describe('transformAction should switch between cat and watermelon', () => {
+    it('transformAction called once should set mainText to This is a Watermelon ->', () => {
+      tObj.wrapper.instance().transformAction();
+      expect(tObj.wrapper.state().mainText).to.eql("This is a Watermelon ->");
+    });
+    it('transformAction called twice should set mainText to This is a Cat ->', () => {
+      tObj.wrapper.instance().setState({isCat: false})
+      tObj.wrapper.instance().transformAction();
+      expect(tObj.wrapper.state().mainText).to.eql("This is a Cat ->");
+    });
+  })
+
 })

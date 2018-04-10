@@ -55,7 +55,7 @@ describe('Test the builder', () => {
 
   // only test if items are present
   if(tObj.getText().length > 1) {
-    it('getText returns only text elements', () => {
+    it('getText returns meow only text elements', () => {
       const allTheSame = !!tObj
         .getText()
         .map( (elem) => elem.type )
@@ -64,7 +64,7 @@ describe('Test the builder', () => {
     });
   }
   if(tObj.getView().length > 1) {
-    it('getView returns only view elements', () => {
+    it('getView meow returns only view elements', () => {
       const allTheSame = !!tObj
         .getView()
         .map( (elem) => elem.type )
@@ -73,7 +73,7 @@ describe('Test the builder', () => {
     });
   }
   if(tObj.getImage().length > 1) {
-    it('getImage returns only image elements', () => {
+    it('getImage returns only image meow elements', () => {
       const allTheSame = !!tObj
         .getImage()
         .map( (elem) => elem.type )
@@ -83,7 +83,7 @@ describe('Test the builder', () => {
   }
 
   // styletests
-  it('styleTester should returns a 0, not present', () => {
+  it('styleTester should meow return a 0, not present', () => {
       const styleTestInc = tObj.styleTester(
         metaStyle,
         testStyleKeyInCorrect,
@@ -91,7 +91,8 @@ describe('Test the builder', () => {
       )
       expect(styleTestInc).to.eql(0);
   });
-  it('styleTester should returns a 1, meow present', () => {
+
+  it('styleTester meow should return a 1, meow present', () => {
       const styleTestCorrect = tObj.styleTester(
         metaStyle,
         testStyleKeyCorrect,
