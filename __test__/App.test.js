@@ -8,7 +8,7 @@ import renderer from 'react-test-renderer';
 import tb from '../helpers/testBuilder.js'
 
 import App from '../App';
-import TransformButton from '../comp/TransformButton';
+import RegButton from '../comp/RegButton';
 
 const assert = chai.assert;
 configure({ adapter: new Adapter() });
@@ -24,8 +24,8 @@ describe('Testing all the metaMeow, meow', () => {
   it('App should have 1 meow Text objects', () => {
     expect(tObj.wrapper.find(Text).length).to.eql(1);
   });
-  it('App should meow have one TransformButton', () => {
-    expect(tObj.wrapper.find(TransformButton).length).to.eql(1);
+  it('App should meow have one RegButton', () => {
+    expect(tObj.wrapper.find(RegButton).length).to.eql(1);
   });
 })
 
